@@ -1,70 +1,108 @@
 import streamlit as st
 
-# Konfigurasi Halaman
+# Konfigurasi Halaman (Nama Tab di Browser)
 st.set_page_config(
-    page_title="Laporan PkM Tim Hantoro",
-    page_icon="🎓",
+    page_title="Unisba Perkuat Daya Saing UMKM Desa Mekarmanik",
+    page_icon="📰",
     layout="centered"
 )
 
-# --- HEADER & JUDUL ---
-st.title("Laporan Kegiatan Pengabdian kepada Masyarakat (PkM)")
-st.subheader("Universitas Islam Bandung")
+# --- JUDUL BERITA (HEADLINE) ---
+st.title("Unisba Perkuat Daya Saing UMKM Desa Mekarmanik melalui Pelatihan Business Model Canvas dan Sertifikasi Halal")
+
+# --- DATELINE & INFO PENULIS ---
+st.caption("📍 **Bandung** | 📅 *Juni 2026* | 👤 *Tim PkM Prodi Ekonomi Pembangunan Unisba*")
 st.write("---")
 
-# --- INFORMASI UMUM ---
-st.header("📌 Detail Kegiatan")
-col1, col2 = st.columns(2)
-
-with col1:
-    st.markdown("**Judul PkM:**")
-    st.write("Pelatihan Peningkatan Ekonomi Kreatif Berbasis Digital") # Ubah sesuai judul Anda
-    
-    st.markdown("**Mitra PkM:**")
-    st.write("UMKM Kecamatan X, Bandung") # Ubah sesuai mitra
-
-with col2:
-    st.markdown("**Waktu Pelaksanaan:**")
-    st.write("Juli 2026")
-    
-    st.markdown("**Lokasi:**")
-    st.write("Bandung, Jawa Barat")
-
-st.write("---")
-
-# --- TIM PELAKSANA ---
-st.header("👥 Tim Pelaksana")
-# Anda bisa menuliskan nama tim Anda di sini
+# --- HIGHLIGHT / INTRO ---
 st.markdown("""
-*   **Ketua:** Hantoro Ksaid Notolegowo, S.E., M.Si.
-*   **Anggota 1:** [Nama Anggota 1]
-*   **Anggota 2:** [Nama Anggota 2]
-*   **Mahasiswa:** [Nama Mahasiswa]
+**BANDUNG** — Tim Pengabdian kepada Masyarakat (PkM) Program Studi Ekonomi Pembangunan, 
+Fakultas Ekonomi dan Bisnis Universitas Islam Bandung (Unisba) menyelenggarakan pelatihan 
+bertema *"Penguatan Produk Unggulan Mitra Berbasis Nilai-Nilai Islam dan Ekosistem 
+Halal untuk Mendorong Ekonomi Berkelanjutan di Desa Mekarmanik Kecamatan Cimenyan"* 
+pada 13 Juni 2026 di GOR Desa Mekarmanik, Kecamatan Cimenyan, Kabupaten Bandung.
 """)
 
-st.write("---")
+# --- DOKUMENTASI (TEMPAT FOTO) ---
+# Jika nanti ada foto, Anda bisa mengaktifkan baris di bawah ini:
+# st.image("foto_kegiatan.jpg", caption="Pelaksanaan PkM Tim Unisba di GOR Desa Mekarmanik")
 
-# --- RINGKASAN KEGIATAN & HASIL ---
-st.header("📝 Ringkasan & Hasil Kegiatan")
+# --- ISI BERITA PARAGRAF 2-3 ---
 st.write("""
-Tuliskan ringkasan kegiatan PkM Anda di sini. Apa latar belakang masalah yang dihadapi mitra, 
-solusi apa yang tim Anda tawarkan, dan bagaimana jalannya kegiatan tersebut.
+Kegiatan ini merupakan bagian dari Program Pengembangan Produk Unggulan Mitra (P3UM) 
+yang bertujuan meningkatkan kapasitas pelaku usaha mikro, kecil, dan menengah (UMKM) agar 
+mampu menghasilkan produk yang lebih berkualitas, memiliki daya saing, serta memenuhi aspek 
+legalitas dan kebutuhan pasar melalui penerapan ekosistem halal dan penguatan manajemen usaha.
 """)
 
-# Menampilkan metrik pencapaian (opsional)
-st.subheader("📊 Indikator Capaian")
-kpi1, kpi2, kpi3 = st.columns(3)
-kpi1.metric(label="Jumlah Peserta", value="40 Orang")
-kpi2.metric(label="Tingkat Kepuasan", value="92%")
-kpi3.metric(label="Produk Dihasilkan", value="5 Rintisan")
+st.write("""
+Pelatihan diikuti oleh 14 peserta, terdiri atas 11 pelaku UMKM, 1 perwakilan Pemerintah 
+Desa Mekarmanik, 1 perwakilan BUMDes, dan 1 perwakilan Koperasi Rasagalor. 
+Kehadiran berbagai unsur tersebut menunjukkan komitmen bersama dalam mendorong 
+pengembangan ekonomi desa yang lebih inklusif dan berkelanjutan.
+""")
 
+# --- STATISTIK PESERTA (VISUALISASI DATA) ---
+st.write(" ")
+st.subheader("📊 Statistik Kehadiran Peserta PkM")
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Total Peserta", "14")
+col2.metric("Pelaku UMKM", "11")
+col3.metric("Pemdes/BUMDes", "2")
+col4.metric("Koperasi", "1")
+st.write(" ")
+
+# --- EMPAT MATERI UTAMA ---
+st.subheader("📌 Empat Pilar Materi Utama Pelatihan")
+st.write("""
+Dalam kegiatan tersebut, tim PkM Unisba memberikan empat materi utama yang saling terintegrasi:
+""")
+
+# Menggunakan expander agar pembaca bisa mengklik materi yang ingin dibaca detail
+with st.expander("1. Sertifikasi Halal"):
+    st.write("Meliputi pentingnya jaminan produk halal, prosedur sertifikasi, serta manfaatnya dalam meningkatkan kepercayaan konsumen dan daya saing produk UMKM.")
+
+with st.expander("2. Business Model Canvas (BMC)"):
+    st.write("Membantu peserta memahami cara menyusun model bisnis secara sistematis, mulai dari identifikasi segmen pelanggan, proposisi nilai, saluran distribusi, hingga struktur biaya dan sumber pendapatan.")
+
+with st.expander("3. Pencatatan Keuangan Sederhana"):
+    st.write("Agar pelaku UMKM mampu mengelola arus kas, memisahkan keuangan usaha dengan keuangan pribadi, serta memiliki dasar yang lebih baik dalam mengambil keputusan bisnis.")
+
+with st.expander("4. Digitalisasi Usaha (TikTok Shop & Google Business)"):
+    st.write("Peserta memperoleh pelatihan pembuatan akun TikTok Shop dan Google Business sehingga produk yang dihasilkan memiliki peluang lebih besar untuk dikenal masyarakat melalui platform digital.")
+
+# --- KELANJUTAN BERITA ---
+st.write("""
+Kegiatan ini tidak hanya berorientasi pada penyampaian materi, tetapi juga memberikan 
+pendampingan praktis kepada peserta agar mampu mengimplementasikan pengetahuan yang diperoleh 
+dalam pengelolaan usahanya. Melalui diskusi interaktif, peserta menyampaikan berbagai tantangan 
+yang dihadapi, mulai dari pengembangan produk, pemasaran, hingga proses memperoleh sertifikasi halal.
+""")
+
+st.info("""
+💡 **Hasil Evaluasi Kegiatan:**
+Menunjukkan adanya peningkatan pemahaman peserta terhadap penerapan Business Model Canvas, 
+pentingnya sertifikasi halal, pengelolaan keuangan usaha, serta pemanfaatan teknologi digital 
+dalam pemasaran produk. Peningkatan tersebut diperoleh berdasarkan hasil evaluasi menggunakan 
+kuesioner yang menunjukkan meningkatnya pemahaman mitra dalam mengadopsi teknologi dan inovasi.
+""")
+
+st.write("""
+Selain meningkatkan kompetensi pelaku UMKM, kegiatan ini juga memperkuat sinergi antara 
+perguruan tinggi, government desa, BUMDes, koperasi, dan masyarakat dalam membangun ekosistem 
+usaha berbasis nilai-nilai Islam yang berkelanjutan. Kolaborasi tersebut diharapkan mampu mendorong 
+lahirnya produk unggulan Desa Mekarmanik yang memiliki kualitas lebih baik, memenuhi standar halal, 
+serta mampu bersaing di pasar yang semakin kompetitif.
+""")
+
+st.write("""
+Melalui kegiatan pengabdian ini, Unisba menegaskan komitmennya dalam menjalankan tridarma 
+perguruan tinggi, khususnya pengabdian kepada masyarakat, dengan menghadirkan solusi yang aplikatif 
+bagi pengembangan ekonomi lokal. Pendampingan akan terus dilanjutkan melalui proses implementasi 
+hasil pelatihan, penguatan kelembagaan usaha, serta fasilitasi sertifikasi halal sehingga manfaat 
+program dapat dirasakan secara berkelanjutan oleh masyarakat Desa Mekarmanik.
+""")
+
+# --- FOOTER ---
 st.write("---")
-
-# --- DOKUMENTASI ---
-st.header("📷 Dokumentasi Kegiatan")
-st.info("Tips: Anda bisa memasukkan foto kegiatan dengan meletakkan file foto di folder yang sama.")
-# Jika ada foto bernama 'foto1.jpg', hapus tanda pagar (#) di bawah ini untuk menampilkannya:
-# st.image("foto1.jpg", caption="Foto Bersama Peserta PkM")
-
-st.write("---")
-st.caption("© 2026 Tim PkM Hantoro Ksaid Notolegowo - Universitas Islam Bandung")
+st.caption("© 2026 Program Studi Ekonomi Pembangunan - Universitas Islam Bandung (Unisba)")
